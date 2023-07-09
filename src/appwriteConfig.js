@@ -16,7 +16,7 @@ const client = new Client()
   .setProject('649eb7638663cbd997df');
 
 
-// export const account = new Account(Client);
+export const account = new Account(client);
 export const databases = new Databases(client)
 
 export default client;

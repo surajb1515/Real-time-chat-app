@@ -56,12 +56,14 @@ export const AuthProvider = ({ children }) => {
 
     try {
       let response = await account.createEmailSession(credentials.email, credentials.password)
-      let accountDetails = await account.get();
-      setUser(accountDetails)
-      navigate('/')
+      console.log("LOGGEDIN", response)
+
+      // let accountDetails = await account.get();
+      // setUser(accountDetails)
+      // navigate('/')
     }
     catch (error) {
-      console.error(error)
+      console.error("ERROR in handleUserLogin function ", error)
     }
   }
 

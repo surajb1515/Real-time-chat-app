@@ -4,6 +4,7 @@ import Room from './pages/Room';
 import { AuthProvider } from './utils/authContext';
 import PrivateRoutes from './utils/privateRoutes';
 import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 
 
