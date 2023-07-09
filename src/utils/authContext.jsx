@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
 
 
-
+  // TO GET DETAILS OF THE ALREADY LOGGEDIN USER
 
   const getUserOnLoad = async () => {
     try {
@@ -58,9 +58,10 @@ export const AuthProvider = ({ children }) => {
       let response = await account.createEmailSession(credentials.email, credentials.password)
       console.log("LOGGEDIN", response)
 
-      // let accountDetails = await account.get();
-      // setUser(accountDetails)
-      // navigate('/')
+      // to get user account details
+      let accountDetails = await account.get();
+      setUser(accountDetails)
+      navigate('/')
     }
     catch (error) {
       console.error("ERROR in handleUserLogin function ", error)

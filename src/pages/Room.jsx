@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import client, { COLLECTION_ID_MESSAGES, DATABASE_ID, databases } from '../appwriteConfig';
 import { ID, Query } from 'appwrite'
 import { Trash2 } from 'react-feather'
+import { useAuth } from '../utils/authContext';
+import Header from '../components/Header';
 
 
 
@@ -11,7 +13,10 @@ const Room = () => {
 
   const [messageBody, setMessageBody] = useState('')
   const [messages, setMessages] = useState([])
-  // const { user } = useAuth()
+  const { user } = useAuth()
+
+
+
 
 
 
@@ -49,6 +54,11 @@ const Room = () => {
 
 
 
+
+
+
+
+
   // TO POPULATE MESSAGES FORM THE DATABASE INTO OUR UI----->
 
   const getMessages = async () => {
@@ -63,6 +73,10 @@ const Room = () => {
     console.log(response)
     setMessages(response.documents)
   }
+
+
+
+
 
 
 
@@ -100,6 +114,9 @@ const Room = () => {
 
 
 
+
+
+
   // DELETE THE MESSAGE ---->
 
   const deleteMessage = async (message_id) => {
@@ -123,8 +140,10 @@ const Room = () => {
 
 
 
+
   return (
     <main className='container'>
+      <Header />
       <div className='room--container'>
 
         <form id="message--form" onSubmit={handleSubmit}>
