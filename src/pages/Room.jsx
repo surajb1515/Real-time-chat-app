@@ -49,7 +49,7 @@ const Room = () => {
 
 
 
-  // TO POPULATE MESSAGES FORM THE DATABASE----->
+  // TO POPULATE MESSAGES FORM THE DATABASE INTO OUR UI----->
 
   const getMessages = async () => {
     const response = await databases.listDocuments(
@@ -69,7 +69,7 @@ const Room = () => {
 
 
 
-  // TO SEND THE MESSAGE----------->
+  // TO SEND THE MESSAGE AND TO STORE IT IN OUT DATABASE----------->
 
   const handleSubmit = async (e) => {
     e.preventDefault()
