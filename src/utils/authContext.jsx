@@ -32,11 +32,13 @@ export const AuthProvider = ({ children }) => {
 
   const getUserOnLoad = async () => {
     try {
-      let accountDetails = await account.get();
+      const accountDetails = await account.get();
+      console.log(accountDetails)
+
       setUser(accountDetails)
     }
     catch (error) {
-
+      // console.log(error)
     }
     setLoading(false)
   }

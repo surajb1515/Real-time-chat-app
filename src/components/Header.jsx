@@ -4,7 +4,14 @@ import { LogOut, LogIn } from 'react-feather'
 import { useAuth } from '../utils/authContext'
 
 const Header = () => {
+
+
+
   const { user, handleLogout } = useAuth()
+
+
+
+
   return (
     <div id="header--wrapper">
       {user ? (
